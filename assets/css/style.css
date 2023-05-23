@@ -1,0 +1,21 @@
+header {
+    background-color: #023e8a;
+    background-image: linear-gradient(to right, #4361ee, #3a0ca3, #560bad);
+}
+
+nav {
+    padding: 15px;
+}
+
+nav h1 {
+    font-weight: bold;
+}
+
+header nav a {
+    text-decoration: none;
+}
+
+.search-container {
+    margin-left: 20px;
+    margin-right: 20px;
+}
