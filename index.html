@@ -23,22 +23,22 @@
         <div class="row">
             <div class="col-12 col-md-3 p-3 bg-light text-dark">
                 <h2>Search for a City</h2>
-                <form>
+                <form id="search-form">
                     <fieldset>
                         <div class="mb-3">
-                            <input type="text" id="q" class="form-control" placeholder="San Diego">
+                            <input type="text" id="search-input" class="form-control" placeholder="San Diego">
                         </div>
                         <div class="mb-3">
                         </div>
-                        <button type="submit" class="form-control btn btn-primary">Search</button>
+                        <button type="submit" id="submitBtn" class="form-control btn btn-primary">Search</button>
                     </fieldset>
                 </form>
             </div>
             <div class="col-12 col-md-9 p-3 text-light">
-                <div id="results">
+                <div id="today">
                     <div class="card mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h2 class="card-title">Card title</h2>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.
                             </p>
                         </div>
@@ -47,6 +47,12 @@
             </div>
         </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
