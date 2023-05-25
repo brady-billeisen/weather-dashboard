@@ -21,7 +21,7 @@
     </header>
     <main class="search-container">
         <div class="row">
-            <div class="col-12 col-md-3 p-3 bg-light text-dark">
+            <div class="col-12 col-md-3 p-3 h-100 bg-light text-dark">
                 <h2>Search for a City</h2>
                 <form id="search-form">
                     <fieldset>
@@ -34,7 +34,7 @@
                     </fieldset>
                 </form>
             </div>
-            <div class="col-12 col-md-9 p-3 text-light">
+            <div class="col-12 col-md-9 p-3">
                 <div id="today">
                     <div class="card mb-3">
                         <div class="card-body">
@@ -45,15 +45,28 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <h2 class="text-dark">5-Day Forecast:</h2>
+                    <div id="fiveDay">
+                        <div id="five-day-container">
+                            <!-- <div class="card w-100 bg-dark mx-2">
+                                <div class="card-body">
+                                    <h5 class="card-title text-light">05/25/2023</h5>
+                                    <h6 class="card-subtitle mb-2 text-light">Card subtitle</h6>
+                                    <p class="card-text text-light">67°F</p>
+                                    <p class="card-text text-light">10 MPH</p>
+                                    <p class="card-text text-light">47%</p>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
