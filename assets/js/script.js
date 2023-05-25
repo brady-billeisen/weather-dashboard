@@ -8,11 +8,6 @@ var humidityEl = document.querySelector('#humidity');
 var fiveDayEl = document.querySelector('#fiveDay');
 var currentDate = dayjs().format('MM/DD/YYYY');
 
-// var bootstrapCSS = document.createElement('link');
-// bootstrapCSS.rel = 'stylesheet';
-// bootstrapCSS.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.5.3/dist/css/bootstrap.min.css';
-// document.head.appendChild(bootstrapCSS);
-
 
 function getGeo(city) {
     var geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
@@ -60,7 +55,9 @@ function getFiveDay(lat, lon) {
                     containerEl.setAttribute('id', 'five-day-container');
                     fiveDayEl.appendChild(containerEl);
                     var cardEl = document.createElement('div');
-                    cardEl.setAttribute('class', 'card w-100 bg-dark mx-2');
+                    cardEl.setAttribute('class', 'card');
+                    cardEl.setAttribute('id', 'forecast-card');
+                    cardEl.setAttribute('style', 'margin: 10px 20px 10px 20px; width: 10rem;');
                     containerEl.appendChild(cardEl);
                     var cardBodyEl = document.createElement('div');
                     cardBodyEl.setAttribute('class', 'card-body');
@@ -68,19 +65,24 @@ function getFiveDay(lat, lon) {
                     var dateEl = document.createElement('h5');
                     dateEl.innerHTML = dayjs((data.list[i]).dt_txt.substring(0, 10)).format('MM/DD/YYYY');
                     dateEl.setAttribute('class', 'card-title text-light');
+                    dateEl.setAttribute('style', 'text-align: center;');
                     var iconUrl = 'https://openweathermap.org/img/w/' + data.list[i].weather[0].icon + '.png'
                     var iconEl = document.createElement('h6');
                     iconEl.innerHTML = `<img src="${iconUrl}" alt="Weather Icon">`;
                     iconEl.setAttribute('class','card-subtitle mb-2 text-light');
+                    iconEl.setAttribute('style', 'text-align: center;');
                     var fiveTempEl = document.createElement('p');
-                    fiveTempEl.innerHTML = (data.list[i].main.temp) + '°F';
+                    fiveTempEl.innerHTML = 'Temp: ' + Math.floor((data.list[i].main.temp)) + '°F';
                     fiveTempEl.setAttribute('class', 'card-text text-light');
+                    fiveTempEl.setAttribute('style', 'text-align: center;');
                     var fiveWindEl = document.createElement('p');
-                    fiveWindEl.innerHTML = (data.list[i].wind.speed) + ' MPH';
+                    fiveWindEl.innerHTML = 'Wind: ' + Math.floor((data.list[i].wind.speed)) + ' MPH';
                     fiveWindEl.setAttribute('class', 'card-text text-light');
+                    fiveWindEl.setAttribute('style', 'text-align: center;');
                     var fiveHumidityEl = document.createElement('p');
-                    fiveHumidityEl.innerHTML = (data.list[i].main.humidity) + '%';
+                    fiveHumidityEl.innerHTML = 'Humidity ' + Math.floor((data.list[i].main.humidity)) + '%';
                     fiveHumidityEl.setAttribute('class', 'card-text text-light');
+                    fiveHumidityEl.setAttribute('style', 'text-align: center; margin-bottom: 10px;');
                     cardEl.appendChild(dateEl);
                     cardEl.appendChild(iconEl);
                     cardEl.appendChild(fiveTempEl);
@@ -93,14 +95,18 @@ function getFiveDay(lat, lon) {
 }
 
 
+// function that clears the innerHTML of all elements in getFiveDay function
+function clearFiveDay() {
+    fiveDayEl.innerHTML = '';
+}
+
+
 searchForm.addEventListener('submit', function(event) {
     event.preventDefault();
+    clearFiveDay();
 
     var city = searchInput.value.trim();
     cardTitleEl.innerHTML = city + ' ' + '(' + currentDate + ')';
     // console.log(city);
     getGeo(city);
 })
-
-
-// getGeo('Nashville');
