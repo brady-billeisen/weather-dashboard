@@ -1,35 +1,47 @@
 header {
     background-color: #023e8a;
     background-image: linear-gradient(to right, #4361ee, #3a0ca3, #560bad, #f18701);
-}
-
-nav {
+  }
+  
+  nav {
     padding: 15px;
-}
-
-nav h1 {
+  }
+  
+  nav h1 {
     display: flex;
     justify-content: center;
     font-weight: bold;
-}
-
-header nav a {
+  }
+  
+  header nav a {
     text-decoration: none;
-}
-
-.search-container {
+  }
+  
+  .search-container {
     margin-left: 20px;
     margin-right: 20px;
-}
-
- #fiveDay {
+  }
+  
+  h2 {
+    margin-left: 20px;
+  }
+  
+  #fiveDay {
     display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-/* .five-day-card-text {
-    color: white;
-    margin-left: 2px;
-} */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-left: 20px;
+  }
+  
+  #five-day-container {
+    flex: 0 0 auto;
+    margin-right: 20px;
+  }
+  
+  .card {
+    height: 100%;
+  }
+  
+  .card-body {
+    margin: 0 10px;
+  }
