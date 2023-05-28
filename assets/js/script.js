@@ -6,6 +6,7 @@ var tempEl = document.querySelector('#temp');
 var windEl = document.querySelector('#wind');
 var humidityEl = document.querySelector('#humidity');
 var fiveDayEl = document.querySelector('#fiveDay');
+var todayContainer = document.querySelector('#today');
 var currentDate = dayjs().format('MM/DD/YYYY');
 
 
@@ -16,7 +17,6 @@ function getGeo(city) {
             return response.json();
         })
         .then(function(data) {
-            // console.log(data[0]);
             getWeather(data[0].lat, data[0].lon, city);
             getFiveDay(data[0].lat, data[0].lon, city);
         });
@@ -30,7 +30,6 @@ function getWeather(lat, lon, city) {
             return response.json();
         })
         .then(function(data) {
-            // console.log(data);
             var iconUrl = 'https://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
             cardTitleEl.innerHTML = city + ' ' + '(' + currentDate + ')';
             cardTitleEl.innerHTML += `<img src="${iconUrl}" alt="Weather Icon">`;
@@ -50,7 +49,6 @@ function getFiveDay(lat, lon) {
         .then(function(data) {
             for (var i = 0; i < data.list.length; i++) {
                 if (i % 8 === 2) {
-                    console.log(data.list[i])
                     var containerEl = document.createElement('div');
                     containerEl.setAttribute('id', 'five-day-container');
                     fiveDayEl.appendChild(containerEl);
@@ -90,14 +88,18 @@ function getFiveDay(lat, lon) {
                     cardEl.appendChild(fiveHumidityEl);
                 }
             }
-            console.log(dateEl.innerHTML);
         });
 }
 
 
-// function that clears the innerHTML of all elements in getFiveDay function
+
 function clearFiveDay() {
     fiveDayEl.innerHTML = '';
+}
+
+
+function setView(view) {
+    todayContainer.style.display = view === 'START' ? null : 'none';
 }
 
 
@@ -107,6 +109,6 @@ searchForm.addEventListener('submit', function(event) {
 
     var city = searchInput.value.trim();
     cardTitleEl.innerHTML = city + ' ' + '(' + currentDate + ')';
-    // console.log(city);
     getGeo(city);
+    setView('START');
 })

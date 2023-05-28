@@ -8,60 +8,47 @@ html,body
 }
 
 header {
-    background-color: #023e8a;
-    background-image: linear-gradient(to right, #4361ee, #3a0ca3, #560bad, #f18701);
-  }
+  background-color: #023e8a;
+  background-image: linear-gradient(to right, #4361ee, #3a0ca3, #560bad, #f18701);
+}
   
-  nav {
-    padding: 15px;
-  }
+nav {
+  padding: 15px;
+}
   
-  nav h1 {
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-  }
+nav h1 {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
   
-  header nav a {
-    text-decoration: none;
-  }
+header nav a {
+  text-decoration: none;
+}
   
-  .search-container {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  
-  h2 {
-    margin-left: 10px;
-  }
+h2 {
+  margin-left: 10px;
+}
 
-  #forecast {
-    margin-left: 25px;
-  }
-  
-  #fiveDay {
-    display: flex;
-    flex-wrap: nowrap;
-    margin-left: 10px;
-    justify-content: space-between;
-  }
+.search-container {
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
-  #forecast-card {
-    background-color: #023e8a!important;
-    background-image: linear-gradient(to bottom right, #fae588, #4361ee, #4361ee, #4361ee)!important;
-  }
+#forecast {
+  margin-left: 25px;
+}
   
-  /* #five-day-container {
-    flex: 0 0 auto;
-    margin-right: 20px;
-  } */
-  
-  /* .card {
-    height: 100%;
-  } */
-  
-  /* .card-body {
-    margin: 0 10px;
-  } */
+#fiveDay {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: 10px;
+  justify-content: space-between;
+}
+
+#forecast-card {
+  background-color: #023e8a!important;
+  background-image: linear-gradient(to bottom right, #fae588, #4361ee, #4361ee, #4361ee)!important;
+}
 
   
